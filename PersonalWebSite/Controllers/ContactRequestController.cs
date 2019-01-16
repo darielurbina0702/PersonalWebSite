@@ -14,19 +14,19 @@ namespace PersonalWebSite.Controllers
             return View();
         }
 
-        public ViewResult Contact()
+        public ViewResult ContactMe()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Contact(ContactRequest contact)
+        public ActionResult ContactMe(ContactRequest contact)
         {
             if (!ModelState.IsValid)
                 return View(contact);
             else
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("GetContactRequests");
             }
         }
 
