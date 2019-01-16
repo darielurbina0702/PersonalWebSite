@@ -1,3 +1,7 @@
-﻿@model PersonalWebSite.Models.ContactRequest
+﻿@model  IEnumerable<PersonalWebSite.Models.ContactRequest>
 
-<h3>Requests</h3>
+@foreach (var contact in Model)
+{
+   <h1>@contact.Name</h1>
+}
+

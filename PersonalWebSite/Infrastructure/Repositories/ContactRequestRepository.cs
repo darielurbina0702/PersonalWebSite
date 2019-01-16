@@ -12,9 +12,26 @@ namespace PersonalWebSite.Infrastructure.Repositories
             throw new System.NotImplementedException();
         }
 
-        public Task<IEnumerable<ContactRequest>> GetContactRequestsAsync()
+        public async Task<IEnumerable<ContactRequest>> GetContactRequestsAsync()
         {
-            throw new System.NotImplementedException();
+            return new List<ContactRequest>()
+            {
+                new ContactRequest
+                {
+                    Name = "Peter",
+                    Email = "peter@gmail.com",
+                    Subject = "Question",
+                    Message = "Can you help me with my homework"
+                },
+
+                new ContactRequest
+                {
+                    Name = "Chris",
+                    Email = "chris@gmail.com",
+                    Subject = "Recruiter",
+                    Message = "Are you interested in any position"
+                }
+            };
         }
     }
 }

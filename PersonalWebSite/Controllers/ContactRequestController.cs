@@ -1,13 +1,23 @@
-﻿using PersonalWebSite.Models;
+﻿using PersonalWebSite.Infrastructure.Repositories.Interfaces;
+using PersonalWebSite.Models;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace PersonalWebSite.Controllers
 {
     public class ContactRequestController : Controller
     {
-        public ViewResult GetContactRequests()
+        private readonly IContactRequestRepository _contactRequestRepository;
+
+        public ContactRequestController(IContactRequestRepository contactRequestRepository)
         {
-            return View();
+            _contactRequestRepository = contactRequestRepository;
+        }
+
+        public async Task<ViewResult> GetContactRequestsAsync()
+        {
+            var contactRequests = await _contactRequestRepository.GetContactRequestsAsync();
+            return View("GetContactRequests",contactRequests);
         }
 
         public ViewResult ContactMe()
