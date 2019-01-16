@@ -2,7 +2,7 @@
 
 namespace PersonalWebSite.Models
 {
-    public class Contact
+    public class ContactRequest
     {
         [Required(ErrorMessage = "Please enter your name")]
         [MaxLength(50)]

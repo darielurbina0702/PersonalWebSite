@@ -24,9 +24,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("About Me", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Me", "Index", "Home")</li>
                     <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
-                    <li>@Html.ActionLink("Contact Me", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Contact Me", "Contact", "ContactRequest")</li>
+                    <li>@Html.ActionLink("Requests", "GetContactRequests", "ContactRequest")</li>
                 </ul>
             </div>
         </div>
