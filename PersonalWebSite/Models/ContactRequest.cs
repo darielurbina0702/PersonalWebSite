@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace PersonalWebSite.Models
 {
@@ -17,5 +18,7 @@ namespace PersonalWebSite.Models
 
         [Required(ErrorMessage = "Please enter a message")]
         public string Message { get; set; }
+        
+        public DateTime Date { get; set; }
     }
 }

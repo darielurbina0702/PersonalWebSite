@@ -1,7 +1,27 @@
 ﻿@model  IEnumerable<PersonalWebSite.Models.ContactRequest>
 
-@foreach (var contact in Model)
-{
-   <h1>@contact.Name</h1>
-}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="page-header">
+                <h1><small class="pull-right">@Model.Count()</small> Comments </h1>
+            </div>
+
+             @foreach (var contact in Model)
+              {
+                <div class="comments-list">
+                    <div class="media">
+                        <p class="pull-right"><small>@contact.Date.ToString("MM/dd/yyyy")</small></p>
+                        <div class="media-body">
+                            <h4 class="media-heading user_name">@contact.Name</h4>
+                            <p>@contact.Subject</p>
+                            <p><small>@contact.Message</small></p>
+                        </div>
+                    </div>
+                </div>
+              }
+        </div>
+    </div>
+</div>
+
 

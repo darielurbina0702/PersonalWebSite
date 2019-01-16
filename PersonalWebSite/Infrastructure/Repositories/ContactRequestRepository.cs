@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 using PersonalWebSite.Infrastructure.Repositories.Interfaces;
 using PersonalWebSite.Models;
 
@@ -7,31 +10,35 @@ namespace PersonalWebSite.Infrastructure.Repositories
 {
     public class ContactRequestRepository : IContactRequestRepository
     {
-        public Task<ContactRequest> AddContactRequest(ContactRequest contactRequest)
+        private const string path = @"C:/Users/Dariel.Urbina/source/repos/PersonalWebSite/PersonalWebSite/Data/data.txt";
+
+        public async Task AddContactRequestAsync(ContactRequest contactRequest)
         {
-            throw new System.NotImplementedException();
+            using (FileStream file = File.Open(path, FileMode.Append, FileAccess.Write))
+            using (var writer = new StreamWriter(file))
+            {              
+                var json = JsonConvert.SerializeObject(contactRequest);
+                await writer.WriteLineAsync(json);
+            }
         }
 
         public async Task<IEnumerable<ContactRequest>> GetContactRequestsAsync()
         {
-            return new List<ContactRequest>()
-            {
-                new ContactRequest
+            List<ContactRequest> result = new List<ContactRequest>();
+            using (var reader = new StreamReader(path))
+            {               
+                while (!reader.EndOfStream)
                 {
-                    Name = "Peter",
-                    Email = "peter@gmail.com",
-                    Subject = "Question",
-                    Message = "Can you help me with my homework"
-                },
-
-                new ContactRequest
-                {
-                    Name = "Chris",
-                    Email = "chris@gmail.com",
-                    Subject = "Recruiter",
-                    Message = "Are you interested in any position"
+                    var line = await reader.ReadLineAsync();
+                    if (line != string.Empty)
+                    {
+                        var request = JsonConvert.DeserializeObject<ContactRequest>(line);
+                        result.Add(request);                        
+                    }                    
                 }
-            };
+
+                return result;
+            }           
         }
     }
 }

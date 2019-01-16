@@ -1,5 +1,6 @@
 ﻿using PersonalWebSite.Infrastructure.Repositories.Interfaces;
 using PersonalWebSite.Models;
+using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -26,16 +27,24 @@ namespace PersonalWebSite.Controllers
         }
 
         [HttpPost]
-        public ActionResult ContactMe(ContactRequest contact)
+        public async Task<ActionResult> ContactMeAsync(ContactRequest contact)
         {
             if (!ModelState.IsValid)
-                return View(contact);
+                return View("ContactMe", contact);
             else
             {
-                return RedirectToAction("GetContactRequests");
+                try
+                {
+                   contact.Date = DateTime.Now;
+                   await _contactRequestRepository.AddContactRequestAsync(contact);
+                }
+
+                catch(Exception e) {
+                    return View("ContactMe", contact);
+                }
+                
+                return RedirectToAction("GetContactRequestsAsync");
             }
         }
-
-
     }
 }

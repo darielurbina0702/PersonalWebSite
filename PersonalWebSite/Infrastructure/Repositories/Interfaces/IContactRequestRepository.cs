@@ -8,7 +8,6 @@ namespace PersonalWebSite.Infrastructure.Repositories.Interfaces
     {
         Task<IEnumerable<ContactRequest>> GetContactRequestsAsync();
 
-        Task<ContactRequest> AddContactRequest(ContactRequest contactRequest);
-        
+        Task AddContactRequestAsync(ContactRequest contactRequest);        
     }
 }
