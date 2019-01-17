@@ -19,7 +19,7 @@ a, h3, p {
 }
 
 .about p {
-    text-shadow: 2px 2px #808080;
+    text-shadow: 1px 2px #808080;
 }
 
 a:hover {

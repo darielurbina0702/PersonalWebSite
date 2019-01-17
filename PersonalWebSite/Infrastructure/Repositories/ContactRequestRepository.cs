@@ -11,10 +11,11 @@ namespace PersonalWebSite.Infrastructure.Repositories
 {
     public class ContactRequestRepository : IContactRequestRepository
     {
-        string path = ConfigurationManager.AppSettings["dataPath"];
-       
+        private string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+            ConfigurationManager.AppSettings["dataPath"].ToString());
+
         public async Task AddContactRequestAsync(ContactRequest contactRequest)
-        {
+        {          
             using (FileStream file = File.Open(path, FileMode.Append, FileAccess.Write))
             using (var writer = new StreamWriter(file))
             {              
@@ -24,7 +25,7 @@ namespace PersonalWebSite.Infrastructure.Repositories
         }
 
         public async Task<IEnumerable<ContactRequest>> GetContactRequestsAsync()
-        {
+        {           
             List<ContactRequest> result = new List<ContactRequest>();
             using (var reader = new StreamReader(path))
             {               
