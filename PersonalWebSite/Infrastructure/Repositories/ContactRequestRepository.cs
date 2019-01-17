@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 using Newtonsoft.Json;
 using PersonalWebSite.Infrastructure.Repositories.Interfaces;
 using PersonalWebSite.Models;
@@ -10,8 +11,8 @@ namespace PersonalWebSite.Infrastructure.Repositories
 {
     public class ContactRequestRepository : IContactRequestRepository
     {
-        private const string path = @"C:/Users/Dariel.Urbina/source/repos/PersonalWebSite/PersonalWebSite/Data/data.txt";
-
+        string path = ConfigurationManager.AppSettings["dataPath"];
+       
         public async Task AddContactRequestAsync(ContactRequest contactRequest)
         {
             using (FileStream file = File.Open(path, FileMode.Append, FileAccess.Write))

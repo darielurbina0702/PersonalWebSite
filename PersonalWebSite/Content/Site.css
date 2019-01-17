@@ -6,7 +6,7 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {   
-    padding: 20px 15px 0px 25px;   
+    padding: 20px 15px 0px 25px;  
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -14,9 +14,12 @@ input, select, textarea {
     max-width: 280px;    
 }
 
-
 a, h3, p {
-    color: white;
+    color: white;    
+}
+
+.about p {
+    text-shadow: 2px 2px #808080;
 }
 
 a:hover {
@@ -24,9 +27,15 @@ a:hover {
     border-radius: 20%;
 }
 
+object {
+    margin-top: 20px;
+    width: 100%;
+    max-height: 100%;
+}
+
 .footer {   
     margin-top: 30px;
-   padding-left: 20px;
+    padding-left: 20px;
 }
 
 label, button {
