@@ -180,6 +180,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\ContactRequest\ContactMe.cshtml" />
     <Content Include="Views\ContactRequest\GetContactRequests.cshtml" />
+    <Content Include="Views\Shared\NavBar.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

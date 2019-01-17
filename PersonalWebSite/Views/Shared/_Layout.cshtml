@@ -11,41 +11,21 @@
     @Styles.Render("~/Content/css")    
 </head>
 <body>
-    <div class="navbar navbar-color navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <img src="~/Content/Images/dariel.jfif" class="my-picture" />
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Me", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
-                    <li>@Html.ActionLink("Contact Me", "ContactMe", "ContactRequest")</li>
-                    <li>@Html.ActionLink("Requests", "GetContactRequestsAsync", "ContactRequest")</li>
-                </ul>
-            </div>
-        </div>
+    <div class="navbar navbar-color navbar-fixed-top">                  
+        @Html.Partial("~/Views/Shared/NavBar.cshtml")      
     </div>
 
     <div class="container body-content">
         @RenderBody()
     </div>
-    
-    <div class="container footer">
-        <a href="https://www.linkedin.com/in/dariel-urbina-9a854bb2/" class="fa fa-linkedin" target="_blank"></a>
-        <a href="https://github.com/darielurbina0702/" class="fa fa-github" target="_blank"></a>
-    </div>        
-    
 
+    <div class="container footer">
+        @Html.Partial("~/Views/Shared/Footer.cshtml") 
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts",required: false) 
+    @RenderSection("scripts", required: false)
 </body>
 </html>
 
