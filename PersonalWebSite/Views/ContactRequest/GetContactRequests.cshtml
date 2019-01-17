@@ -10,11 +10,12 @@
             {
             <div class="comments-list">
                 <div class="media">
-                    <p class="pull-right"><small>@contact.Date.ToString("MM/dd/yyyy")</small></p>
+                    <p class="pull-right">@contact.Date.ToString("MM/dd/yyyy")</p>
                     <div class="media-body">
-                        <h2 class="media-heading user_name">@contact.Name</h2>
-                        <p>@contact.Subject</p>
-                        <p><small>@contact.Message</small></p>
+                        <h3 class="media-heading user_name">@contact.Name</h3>
+                        <p>Email: @contact.Email</p>
+                        <p>Subject: @contact.Subject</p>
+                        <p>Message: @contact.Message</p>
                     </div>
                 </div>
             </div>
