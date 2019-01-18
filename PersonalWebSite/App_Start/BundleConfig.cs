@@ -29,7 +29,8 @@ namespace PersonalWebSite.App_Start
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/site.css",
-                "~/Content/messages.css"));
+                "~/Content/messages.css",
+                "~/Content/errors.css"));
         }
     }
 }

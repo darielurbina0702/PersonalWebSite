@@ -18,7 +18,7 @@ namespace PersonalWebSite.Controllers
         public async Task<ViewResult> GetContactRequestsAsync()
         {
             var contactRequests = await _contactRequestRepository.GetContactRequestsAsync();
-            return View("GetContactRequests",contactRequests);
+            return View("GetContactRequests", contactRequests);
         }
 
         public ViewResult ContactMe()
