@@ -7,7 +7,7 @@
 }
 
 <div class="row">
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-12 col-sm-6">
         @using (Html.BeginForm("ContactMeAsync", "ContactRequest", new { @class = "form-group" }))
         {
             @Html.ValidationSummary()
@@ -28,8 +28,8 @@
         }
     </div>
 
-    <div class="col-xs-12 col-md-6 info">
-        <h3>Feel free to contact me at any time</h3>
+    <div class="col-xs-12 col-sm-6 info">
+        <h3>Feel free to contact me: </h3>
 
         <p>send me an email at: darielurbina@gmail.com</p>
         <p>Linkedin:  <a href=@ViewBag.Linkedin target="_blank">@ViewBag.Linkedin</a></p> 
