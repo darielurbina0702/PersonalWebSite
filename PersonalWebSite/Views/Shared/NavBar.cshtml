@@ -1,20 +1,22 @@
-﻿<div class="container">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <img src="~/Content/Images/dariel.jfif" class="my-picture" />
-    </div>
+﻿<div class="navbar navbar-color navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="~/Content/Images/dariel.jfif" class="my-picture" />
+        </div>
 
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-            <li>@Html.ActionLink("Me", "Index", "Home")</li>
-            <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
-            <li>@Html.ActionLink("Contact Me", "ContactMe", "ContactRequest")</li>
-            <li>@Html.ActionLink("Requests", "GetContactRequestsAsync", "ContactRequest")</li>
-        </ul>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Me", "Index", "Home")</li>
+                <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
+                <li>@Html.ActionLink("Contact Me", "ContactMe", "ContactRequest")</li>
+                <li>@Html.ActionLink("Requests", "GetContactRequestsAsync", "ContactRequest")</li>
+            </ul>
+        </div>
     </div>
 </div>
 

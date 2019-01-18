@@ -2,28 +2,42 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Linkedin = "https://www.linkedin.com/in/dariel-urbina-9a854bb2/";
+    ViewBag.Github = "https://github.com/darielurbina0702/";
 }
 
-<h3>Contact Me</h3>
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        @using (Html.BeginForm("ContactMeAsync", "ContactRequest", new { @class = "form-group" }))
+        {
+            @Html.ValidationSummary()
 
-@using (Html.BeginForm("ContactMeAsync", "ContactRequest", new { @class = "form-group" }))
-{
-    @Html.ValidationSummary()
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
 
-    @Html.LabelFor(m => m.Name)
-    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
 
-    @Html.LabelFor(m => m.Email)
-    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.LabelFor(m => m.Subject)
+            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
 
-    @Html.LabelFor(m => m.Subject)
-    @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+            @Html.LabelFor(m => m.Message)
+            @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
 
-    @Html.LabelFor(m => m.Message)
-    @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+            <button class="btn btn-default">Send</button>
+        }
+    </div>
 
-    <button class="btn btn-default">Send</button>
-}
+    <div class="col-xs-12 col-md-6 info">
+        <h3>Feel free to contact me at any time</h3>
+
+        <p>send me an email at: darielurbina@gmail.com</p>
+        <p>Linkedin:  <a href=@ViewBag.Linkedin target="_blank">@ViewBag.Linkedin</a></p> 
+        <p>Github:  <a href=@ViewBag.Github target="_blank"> @ViewBag.Github</a></p>
+    </div>
+</div>
+
+
 
 
 
