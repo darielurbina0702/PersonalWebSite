@@ -6,7 +6,7 @@ namespace PersonalWebSite.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-#if DEBUG
+#if !DEBUG
             BundleTable.EnableOptimizations = true;
             BundleTable.Bundles.UseCdn = true;
 #endif

@@ -1,46 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using PersonalWebSite.Infrastructure.Repositories.Interfaces;
 using PersonalWebSite.Models;
+using PersonalWebSite.Services.Interfaces;
 
 namespace PersonalWebSite.Infrastructure.Repositories
 {
     public class ContactRequestRepository : IContactRequestRepository
-    {
-        private string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            ConfigurationManager.AppSettings["dataPath"].ToString());
+    {      
+
+        private readonly IDataProcessorService _dataProcessorService;
+
+        public ContactRequestRepository(IDataProcessorService dataProcessorService)
+        {
+            _dataProcessorService = dataProcessorService;
+        }        
 
         public async Task AddContactRequestAsync(ContactRequest contactRequest)
-        {          
-            using (FileStream file = File.Open(path, FileMode.Append, FileAccess.Write))
-            using (var writer = new StreamWriter(file))
-            {              
-                var json = JsonConvert.SerializeObject(contactRequest);
-                await writer.WriteLineAsync(json);
-            }
+        {
+            await _dataProcessorService.CopyToFileAsync(contactRequest);
         }
 
         public async Task<IEnumerable<ContactRequest>> GetContactRequestsAsync()
-        {           
-            List<ContactRequest> result = new List<ContactRequest>();
-            using (var reader = new StreamReader(path))
-            {               
-                while (!reader.EndOfStream)
-                {
-                    var line = await reader.ReadLineAsync();
-                    if (line != string.Empty)
-                    {
-                        var request = JsonConvert.DeserializeObject<ContactRequest>(line);
-                        result.Add(request);                        
-                    }                    
-                }
-
-                return result;
-            }           
+        {
+            return await _dataProcessorService.ReadFromFileAsync();
         }
     }
 }

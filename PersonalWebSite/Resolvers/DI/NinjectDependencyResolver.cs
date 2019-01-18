@@ -1,6 +1,8 @@
 ﻿using Ninject;
 using PersonalWebSite.Infrastructure.Repositories;
 using PersonalWebSite.Infrastructure.Repositories.Interfaces;
+using PersonalWebSite.Services;
+using PersonalWebSite.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -30,6 +32,7 @@ namespace PersonalWebSite.Resolvers.DI
         private void AddBindings()
         {
             _kernel.Bind<IContactRequestRepository>().To<ContactRequestRepository>();
+            _kernel.Bind<IDataProcessorService>().To<DataProcessorService>();
         }
     }
 }
