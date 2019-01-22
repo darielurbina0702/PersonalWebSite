@@ -144,6 +144,10 @@ label, button {
     .my-picture {
         margin: 10px 0 10px 25px;
     }
+
+    .info {
+        margin-bottom: 40px;
+    }
 }
 
 

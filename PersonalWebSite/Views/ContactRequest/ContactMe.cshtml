@@ -7,7 +7,15 @@
 }
 
 <div class="row">
-    <div class="col-xs-12 col-sm-6">
+    <div class="col-sm-6 col-sm-push-6 col-md-6 info">
+        <h3>Feel free to contact me: </h3>
+
+        <p>send me an email at: darielurbina@gmail.com</p>
+        <p>Linkedin:  <a href=@ViewBag.Linkedin target="_blank">@ViewBag.Linkedin</a></p>
+        <p>Github:  <a href=@ViewBag.Github target="_blank"> @ViewBag.Github</a></p>
+    </div>
+
+    <div class="col-sm-6 col-sm-pull-6 col-md-6">
         @using (Html.BeginForm("ContactMeAsync", "ContactRequest", new { @class = "form-group" }))
         {
             @Html.ValidationSummary()
@@ -26,14 +34,6 @@
 
             <button class="btn btn-default">Send</button>
         }
-    </div>
-
-    <div class="col-xs-12 col-sm-6 info">
-        <h3>Feel free to contact me: </h3>
-
-        <p>send me an email at: darielurbina@gmail.com</p>
-        <p>Linkedin:  <a href=@ViewBag.Linkedin target="_blank">@ViewBag.Linkedin</a></p> 
-        <p>Github:  <a href=@ViewBag.Github target="_blank"> @ViewBag.Github</a></p>
     </div>
 </div>
 
