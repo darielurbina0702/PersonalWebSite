@@ -12,8 +12,8 @@ namespace PersonalWebSite.App_Start
 #endif
 
             bundles.Add(new ScriptBundle("~/bundles/jquery",
-                "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.min.js").Include(
-                "~/Scripts/jquery-{version}.js"));
+                "https://code.jquery.com/jquery-1.10.2.min.js").Include(
+                "~/Scripts/jquery-1.10.2.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -26,14 +26,13 @@ namespace PersonalWebSite.App_Start
                 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css").Include(
                 "~/Content/font-awesome.css"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/site.css",
-                "~/Content/messages.css",
-                "~/Content/errors.css"));
+            bundles.Add(new StyleBundle("~/Content/css", "https://stackpath.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css")
+                .Include("~/Content/bootstrap.min.css"));
 
-            bundles.Add(new StyleBundle("~/Content/bootstrap",
-                "https://stackpath.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css").Include(
-                "~/Content/bootstrap.min.css"));
+            bundles.Add(new StyleBundle("~/bundles/css")
+                .Include("~/Content/Site.css")
+                .Include("~/Content/messages.css")
+                .Include("~/Content/errors.css"));
         }
     }
 }
