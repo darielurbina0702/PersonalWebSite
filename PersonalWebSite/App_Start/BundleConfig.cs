@@ -27,10 +27,13 @@ namespace PersonalWebSite.App_Start
                 "~/Content/font-awesome.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/bootstrap.css",
                 "~/Content/site.css",
                 "~/Content/messages.css",
                 "~/Content/errors.css"));
+
+            bundles.Add(new StyleBundle("~/Content/bootstrap",
+                "https://stackpath.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css").Include(
+                "~/Content/bootstrap.min.css"));
         }
     }
 }
