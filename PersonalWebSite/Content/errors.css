@@ -1,4 +1,10 @@
-﻿.error-template {
+﻿/*validation errors*/
+.validation-summary-errors {
+    color: red;
+    font-size: 30px;
+}
+
+.error-template {
     margin-top: 20px;
     height: 70vh;
     padding: 80px 15px;
@@ -22,3 +28,5 @@
       padding: 200px 15px;
     }
 }
+
+

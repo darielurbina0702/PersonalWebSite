@@ -15,7 +15,7 @@
         <p>Github:  <a href=@ViewBag.Github target="_blank"> @ViewBag.Github</a></p>
     </div>
 
-    <div class="col-sm-6 col-sm-pull-6">
+    <div class="col-sm-6 col-sm-pull-6 contact">
         @using (Html.BeginForm("ContactMeAsync", "ContactRequest", new { @class = "form-group" }))
         {
             @Html.ValidationSummary()
