@@ -6,7 +6,7 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {        
-    margin: 120px 230px;
+    margin: 120px 230px 70px 230px;
 }
 
 a, h3, p {
@@ -15,11 +15,11 @@ a, h3, p {
 
 .about p {
     text-shadow: 2px 4px #808080;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .about h3 {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 a:hover {
@@ -33,11 +33,11 @@ a:hover {
 
 .info p {
     margin-top: 70px;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .info h3 {
-    font-size: 55px;
+    font-size: 40px;
 }   
 
 object {
@@ -47,7 +47,7 @@ object {
 }
 
 .footer {   
-  margin-left: 230px;
+  margin-left: 230px;  
 }
 
 label, button {
@@ -71,20 +71,20 @@ label, button {
 
 /* Style all font awesome icons */
 .fa {
-    padding: 7px;
-    width: 70px;
-    height: 70px;
+    padding: 12px;
+    width: 50px;
+    height: 50px;
     text-align: center;
     border-radius: 20%;    
     font-size: 16px;
 }
 
 .fa.fa-github {
-    font-size: 4em;
+    font-size: 2em;
 }
 
 .fa.fa-linkedin {
-    font-size: 4em;
+    font-size: 2em;
 }
 
 .fa:hover {

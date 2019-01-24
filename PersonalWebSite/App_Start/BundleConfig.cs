@@ -11,6 +11,7 @@ namespace PersonalWebSite.App_Start
             BundleTable.Bundles.UseCdn = true;
 #endif
 
+
             bundles.Add(new ScriptBundle("~/bundles/jquery",
                 "https://code.jquery.com/jquery-1.10.2.min.js").Include(
                 "~/Scripts/jquery-1.10.2.js"));
@@ -21,6 +22,9 @@ namespace PersonalWebSite.App_Start
             bundles.Add(new ScriptBundle("~/bundles/bootstrap",
                 "https://ajax.aspnetcdn.com/ajax/bootstrap/3.0.0/bootstrap.min.js").Include(
                 "~/Scripts/bootstrap.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/google-analytics").Include(
+                "~/Scripts/google-analytics.js"));
 
             bundles.Add(new StyleBundle("~/Content/fontawesome",
                 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css").Include(
