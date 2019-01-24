@@ -1,9 +1,16 @@
-﻿
-@{
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <object data="~/Content/PDF/Dariel Urbina Resume.pdf" type="application/pdf" height="900"></object>
 
 @Scripts.Render("~/bundles/google-analytics")
+<script>
+    (function (helper) {
+        helper.onready();
+    })(googleHelper)
+</script>
+
+
+
 
