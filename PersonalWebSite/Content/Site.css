@@ -59,7 +59,7 @@ label, button {
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    margin: 15px -140px;
+    margin: 15px -125px;
 }
 
 @media (min-width: 1200px){
@@ -71,12 +71,20 @@ label, button {
 
 /* Style all font awesome icons */
 .fa {
-    padding: 25px;
+    padding: 7px;
     width: 70px;
     height: 70px;
     text-align: center;
     border-radius: 20%;    
     font-size: 16px;
+}
+
+.fa.fa-github {
+    font-size: 4em;
+}
+
+.fa.fa-linkedin {
+    font-size: 4em;
 }
 
 .fa:hover {
@@ -181,8 +189,8 @@ label, button {
     }
 
     .contact .form-control {
-        width: 280px;
-        height: 30px;
+        width: 310px;
+        height: 50px;
     }
 
     .contact textarea.form-control {
@@ -210,6 +218,14 @@ label, button {
         height: 30px;
         text-align: center;
         border-radius: 30%;
+    }
+
+    .fa.fa-github {
+        font-size: 1em;
+    }
+
+    .fa.fa-linkedin {
+        font-size: 1em;
     }
 
     .footer {
