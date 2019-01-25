@@ -2,8 +2,10 @@
     "use strict"
     var module = {
         onready: function () {
-            ga('send', 'pageview', location.pathname + '/durbina.pdf');            
-            console.log(location.pathname + '/durbina.pdf');
+            $('#tracker').on('click', function () {
+                console.log('resume/onClick');
+                ga('send', 'pageview',  'resume/onClick');               
+            });          
         }    
     };
     return module;
