@@ -12,7 +12,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Me", "Index", "Home")</li>
-                <li>@Html.ActionLink("Resume", "Resume", "Home", new { id = "tracker"})</li>
+                <li>@Html.ActionLink("Resume", "Resume", "Home",null, new { id = "tracker"})</li>
                 <li>@Html.ActionLink("Contact Me", "ContactMe", "ContactRequest")</li>
                 <li>@Html.ActionLink("Requests", "GetContactRequestsAsync", "ContactRequest")</li>
             </ul>

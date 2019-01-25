@@ -27,27 +27,21 @@ a:hover {
     border-radius: 20%;
 }
 
+.footer {
+    margin-left: 230px;
+}
+
 .info {
  margin-top: 30px;
 }
 
+.info h3 {
+    font-size: 40px;
+}  
+
 .info p {
     margin-top: 70px;
     font-size: 28px;
-}
-
-.info h3 {
-    font-size: 40px;
-}   
-
-object {
-    margin-top: 20px;
-    width: 100%;
-    max-height: 100%;
-}
-
-.footer {   
-  margin-left: 230px;  
 }
 
 label, button {
@@ -60,6 +54,19 @@ label, button {
     height: 110px;
     border-radius: 50%;
     margin: 15px -125px;
+}
+
+object {
+    margin-top: 20px;
+    width: 100%;
+    max-height: 100%;
+}
+
+.resume {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 180px;
+    margin-bottom: 180px;
 }
 
 @media (min-width: 1200px){
@@ -79,26 +86,26 @@ label, button {
     font-size: 16px;
 }
 
-.fa.fa-github {
-    font-size: 2em;
-}
-
-.fa.fa-linkedin {
-    font-size: 2em;
-}
-
 .fa:hover {
     opacity: 0.7;
 }
 
 .fa-github {
     background-color: rgb(20, 60, 114);
-    color: white;    
+    color: white;
 }
 
 .fa-linkedin {
     background-color: rgb(20, 60, 114);
     color: white;
+}
+
+.fa.fa-github {
+    font-size: 2em;
+}
+
+.fa.fa-linkedin {
+    font-size: 2em;
 }
 
 
@@ -109,27 +116,27 @@ label, button {
     border-color: rgb(20, 60, 114);
 }
 
-.contact .form-control{
-    width: 380px; 
-    height: 60px;
-}
-
-.contact textarea.form-control {
-  height: 120px;
-  margin-bottom: 20px;
-}
-
-.contact label {
-  font-size: 30px;
-}
-
 .contact .btn {
     font-size: 32px;
     border-radius: 6px;
 }
 
 .contact button {
-  padding: 10px 25px;  
+    padding: 10px 25px;
+}
+
+.contact .form-control{
+    width: 380px; 
+    height: 60px;
+}
+
+.contact label {
+    font-size: 30px;
+}
+
+.contact textarea.form-control {
+  height: 120px;
+  margin-bottom: 20px;
 }
 
 .icon-bar {
@@ -167,13 +174,6 @@ label, button {
     opacity: 0.5;      
 }
 
-.resume {  
-  text-align: center;
-  font-size: 22px;
-  margin-top: 180px;
-  margin-bottom: 180px;
-}
-
 
 /*small screens*/
 @media (max-width: 768px) {
@@ -195,20 +195,31 @@ label, button {
         margin: 0px;
     }
 
-    .contact .form-control {
-        width: 310px;
+    .footer {
+        margin-left: 10px;
+    }
+
+    .info {
+        margin-bottom: 30px;
+    }
+
+    .info p {
+        margin-top: 40px;
+        font-size: 18px;
+    }
+
+    .info h3 {
+        font-size: 28px;
+    } 
+
+    .my-picture {
+        margin: 10px 0 10px 25px;
         height: 50px;
+        width: 50px;
     }
 
-    .contact textarea.form-control {
-        height: 60px;
-        margin-bottom: 0px;
-    }   
 
-    .contact label {
-        font-size: 16px;
-    }
-
+    /*bootstrap overrides*/
     .contact .btn {
         font-size: 20px;
         border-radius: 6px;
@@ -218,6 +229,62 @@ label, button {
         padding: 3px 6px;
         font-size: 10px;
     }
+
+    .contact .form-control {
+        width: 310px;
+        height: 50px;
+    }
+
+    .contact label {
+        font-size: 16px;
+    }    
+
+    .contact textarea.form-control {
+        height: 60px;
+        margin-bottom: 0px;
+    }
+
+    .navbar-color {
+        background-color: rgb(20, 60, 114);
+        height: 70px;
+        padding-left: 0px;
+    }
+
+
+    .navbar-collapse {
+        background-color: rgb(20, 60, 114);
+        padding-top: 5px;
+    }
+
+    .nav > li > a {
+        margin-left: -10px;
+        font-size: 16px;
+    }
+
+    .nav > li > a:hover {
+        background-color: transparent;
+    }
+
+    .navbar-nav {
+        margin-top: 5px;
+        margin-left: -10px;
+    }
+
+    .navbar-nav li {
+        margin-top: 5px;
+        height: 50px;
+    }
+
+    .navbar-nav li a {
+        padding-top: 10px;
+    }
+
+    .navbar-toggle {
+        margin-top: 15px;
+    }
+    
+
+    /*font awesome overrides*/
 
     .fa {
         padding: 7px;        
@@ -233,69 +300,7 @@ label, button {
 
     .fa.fa-linkedin {
         font-size: 1em;
-    }
-
-    .footer {
-      margin-left: 10px;
-    }
-
-    .info p {
-        margin-top: 40px;
-        font-size: 18px;
-    }
-
-    .info h3 {
-        font-size: 28px;
-    } 
-
-    .nav > li > a {
-        margin-left: -10px;
-        font-size: 16px;        
-    }
-
-    .nav > li > a:hover {        
-        background-color:transparent;   
-    }
-
-    .navbar-color {
-        background-color: rgb(20, 60, 114);
-        height: 70px;
-        padding-left: 0px;
-    }
-
-    .my-picture {
-        margin: 10px 0 10px 25px;
-        height: 50px;
-        width: 50px;
-    }
-
-    .info {
-        margin-bottom: 30px;
-    }   
-
-    /*bootstrap overrides*/
-    .navbar-collapse {
-        background-color: rgb(20, 60, 114);
-        padding-top: 5px;
-    }
-
-    .navbar-toggle {
-        margin-top: 15px;
-    }
-
-    .navbar-nav {
-        margin-top: 5px;     
-        margin-left: -10px;
-    }
-
-    .navbar-nav li {        
-        margin-top: 5px;
-        height: 50px;
-    }
-
-    .navbar-nav li a {
-       padding-top: 10px;
-    }
+    }    
 }
 
 
